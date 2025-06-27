@@ -31,7 +31,7 @@ export const CartProvider = ({ children }) => {
   const fetchCart = async () => {
     try {
       setLoading(true);
-      const response = await fetch(`${import.meta.env.VITE_API_URL}/api/cart`, {
+      const response = await fetch(`${import.meta.env.VITE_API_URL}api/cart`, {
         headers: {
           'Authorization': `Bearer ${localStorage.getItem('token')}`
         }
@@ -64,7 +64,7 @@ export const CartProvider = ({ children }) => {
         [productId]: { success: null, error: null }
       }));
       
-      const response = await fetch(`${import.meta.env.VITE_API_URL}/api/cart`, {
+      const response = await fetch(`${import.meta.env.VITE_API_URL}api/cart`, {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
@@ -122,7 +122,7 @@ export const CartProvider = ({ children }) => {
 
     try {
       // Primero necesitamos obtener el itemId del carrito
-      const cartResponse = await fetch(`${import.meta.env.VITE_API_URL}/api/cart`, {
+      const cartResponse = await fetch(`${import.meta.env.VITE_API_URL}api/cart`, {
         headers: {
           'Authorization': `Bearer ${localStorage.getItem('token')}`
         }
@@ -139,7 +139,7 @@ export const CartProvider = ({ children }) => {
         throw new Error('Item no encontrado en el carrito');
       }
 
-      const response = await fetch(`${import.meta.env.VITE_API_URL}/api/cart/${item.id}`, {
+      const response = await fetch(`${import.meta.env.VITE_API_URL}api/cart/${item.id}`, {
         method: 'DELETE',
         headers: {
           'Authorization': `Bearer ${localStorage.getItem('token')}`
@@ -165,7 +165,7 @@ export const CartProvider = ({ children }) => {
 
     try {
       // Primero necesitamos obtener el itemId del carrito
-      const cartResponse = await fetch(`${import.meta.env.VITE_API_URL}/api/cart`, {
+      const cartResponse = await fetch(`${import.meta.env.VITE_API_URL}api/cart`, {
         headers: {
           'Authorization': `Bearer ${localStorage.getItem('token')}`
         }
@@ -182,7 +182,7 @@ export const CartProvider = ({ children }) => {
         throw new Error('Item no encontrado en el carrito');
       }
 
-      const response = await fetch(`${import.meta.env.VITE_API_URL}/api/cart/${item.id}`, {
+      const response = await fetch(`${import.meta.env.VITE_API_URL}api/cart/${item.id}`, {
         method: 'PUT',
         headers: {
           'Content-Type': 'application/json',
@@ -209,7 +209,7 @@ export const CartProvider = ({ children }) => {
     }
 
     try {
-      const response = await fetch(`${import.meta.env.VITE_API_URL}/api/cart`, {
+      const response = await fetch(`${import.meta.env.VITE_API_URL}api/cart`, {
         method: 'DELETE',
         headers: {
           'Authorization': `Bearer ${localStorage.getItem('token')}`
