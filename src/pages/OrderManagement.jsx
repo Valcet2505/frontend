@@ -15,7 +15,7 @@ const OrderManagement = () => {
     const fetchOrders = async () => {
       try {
         setLoading(true);
-        const response = await fetch(`${import.meta.env.VITE_API_URL}/api/orders`, {
+        const response = await fetch(`${import.meta.env.VITE_API_URL}api/orders`, {
           headers: {
             'Authorization': `Bearer ${localStorage.getItem('token')}`
           }
@@ -44,7 +44,7 @@ const OrderManagement = () => {
     try {
       console.log(`Actualizando orden ${orderId} a estado ${newStatus}`);
       
-      const response = await fetch(`${import.meta.env.VITE_API_URL}/api/orders/${orderId}/status`, {
+      const response = await fetch(`${import.meta.env.VITE_API_URL}api/orders/${orderId}/status`, {
         method: 'PATCH',
         headers: {
           'Content-Type': 'application/json',
@@ -82,7 +82,7 @@ const OrderManagement = () => {
 
     try {
       setCancellingOrder(orderId);
-      const response = await fetch(`${import.meta.env.VITE_API_URL}/api/orders/${orderId}/cancel`, {
+      const response = await fetch(`${import.meta.env.VITE_API_URL}api/orders/${orderId}/cancel`, {
         method: 'POST',
         headers: {
           'Authorization': `Bearer ${localStorage.getItem('token')}`
