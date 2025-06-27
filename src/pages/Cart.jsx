@@ -28,7 +28,7 @@ const Cart = () => {
       setLoading(true);
       setError(null);
 
-      const response = await fetch(`${import.meta.env.VITE_API_URL}/api/orders`, {
+      const response = await fetch(`${import.meta.env.VITE_API_URL}api/orders`, {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
@@ -50,7 +50,7 @@ const Cart = () => {
       if (data.paymentUrl && data.order && data.order.id) {
         // Actualizar estado a 'En proceso' (PROCESSING = 1)
         try {
-          await fetch(`${import.meta.env.VITE_API_URL}/api/orders/${data.order.id}/status`, {
+          await fetch(`${import.meta.env.VITE_API_URL}/api/orders/${data.order.id}status`, {
             method: 'PATCH',
             headers: {
               'Content-Type': 'application/json',
