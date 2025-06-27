@@ -42,7 +42,7 @@ export const CurrencyProvider = ({ children }) => {
     setError(null);
     
     try {
-      const response = await axios.get('http://localhost:3000/api/currency/rates');
+      const response = await axios.get('https://backend-g93v.onrender.com/api/currency/rates');
       
       if (response.data.success) {
         setExchangeRates(response.data.rates);
